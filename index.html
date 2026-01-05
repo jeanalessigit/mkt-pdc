@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mercado de Previsão</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">Prediction Market</div>
+  <button id="loginBtn" class="btn-outline">Entrar</button>
+</header>
+
+<main class="container">
+  <h1>Mercados Ativos</h1>
+
+  <div class="market-card">
+    <h2>O dólar fechará acima de R$6,00 em março?</h2>
+    <div class="actions">
+      <button class="btn yes" onclick="openTrade('SIM', 0.58)">SIM 0.58</button>
+      <button class="btn no" onclick="openTrade('NÃO', 0.42)">NÃO 0.42</button>
+    </div>
+    <span class="meta">Encerra em 31/03/2026</span>
+  </div>
+</main>
+
+<!-- MODAL LOGIN -->
+<div class="modal" id="loginModal">
+  <div class="modal-box">
+    <h2>Entrar</h2>
+    <input type="email" placeholder="Email" />
+    <input type="password" placeholder="Senha" />
+    <button class="btn primary">Entrar</button>
+    <button class="link" onclick="closeLogin()">Cancelar</button>
+  </div>
+</div>
+
+<!-- MODAL TRADE -->
+<div class="modal" id="tradeModal">
+  <div class="modal-box">
+    <h2 id="tradeTitle"></h2>
+    <input type="number" placeholder="Valor em R$" />
+    <button class="btn primary">Confirmar</button>
+    <button class="link" onclick="closeTrade()">Cancelar</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
